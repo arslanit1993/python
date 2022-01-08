@@ -14,11 +14,11 @@ def func(b):
         e = input(a[str(b)][0])
         if e == a[str(b)][2]:
             cor.append(a[str(b)][0])
-            # print(cor)
+            print('correct, pinyin is',a[str(b)][0], a[str(b)][1])
             return func(b+1)
         else:
             incor.append(a[str(b)][0])
-            # print(incor)
+            print('incorrect, try again!')
             return func(b)        
     print(f'you were right {len(cor)} times {cor}, you were wrong {len(incor)} times {incor}')
     d = input("Go again?: y(yes) or n(no)")
