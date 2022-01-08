@@ -4,7 +4,7 @@ a = {
    '3':['阴','yīn','cloudy'],
 }
 
-
+#hello
 def func(b):
     correct = 0
     incorrect = 0
