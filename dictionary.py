@@ -3,17 +3,27 @@ a = {
    '2':['错','cuò','wrong'],
    '3':['阴','yīn','cloudy'],
 }
+cor = []
+incor = []
 
-#hello
+
+
 def func(b):
-    correct = 0
-    incorrect = 0
-
+    
     while b <= len(a):
-        c = input(a[str(b)][0])
-        if c == a[str(b)][2]:
+        e = input(a[str(b)][0])
+        if e == a[str(b)][2]:
+            cor.append(a[str(b)][0])
+            # print(cor)
             return func(b+1)
-                
-    
-    
+        else:
+            incor.append(a[str(b)][0])
+            # print(incor)
+            return func(b)        
+    print(f'you were right {len(cor)} times {cor}, you were wrong {len(incor)} times {incor}')
+    d = input("Go again?: y(yes) or n(no)")
+    if d == 'y':
+        return(func(1))
+    else: 
+        print("Good bye, Have a nice day")
 func(1)
