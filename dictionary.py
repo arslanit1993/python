@@ -10,7 +10,13 @@ a = {
    '9':['累',	'lèi',	'tired', 'cansado'],
    '10':['好吃',	'hǎochī',	'delicioous','delicioso'],
    '11':['近',	'jìn',	'close', 'cerca'],
-
+   '12':['远'	,'yuǎn'	,'far', 'lejos', ],
+   '13':['慢', 	'màn', 	'slow', 'lento'],
+    '14':['快', 	'kuài', 	'fast','rapido' ], 
+    '15':['忙' 	,'máng','busy','ocupado'],
+    '16':['黑', 	'hēi', 	'black','negro'],
+    '17':['白' ,	'bái' ,	'white', 'blanco'],
+    '18':['红', 	'hóng', 	'red']
 }
 
 
@@ -31,7 +37,7 @@ def func(b):
             print('incorrect, try again!')
             return func(b)        
     print(f'you were right {len(cor)} times {cor}, you were wrong {len(incor)} times {incor}')
-    d = input("Go again?: y(yes) or n(no), or the line you want to start from")
+    d = input("Go again?: y(yes) or n(no), or the line you want to start from: ")
     if d == 'y':
         return(func(1))
     elif d == 'n': 
