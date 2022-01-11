@@ -16,7 +16,7 @@ a = {
     '15':['忙' 	,'máng','busy','ocupado'],
     '16':['黑', 	'hēi', 	'black','negro'],
     '17':['白' ,	'bái' ,	'white', 'blanco'],
-    '18':['红', 	'hóng', 	'red']
+    '18':['红', 	'hóng', 	'red', 'rojo']
 }
 
 
