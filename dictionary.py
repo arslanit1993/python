@@ -16,7 +16,14 @@ a = {
     '15':['忙' 	,'máng','busy','ocupado'],
     '16':['黑', 	'hēi', 	'black','negro'],
     '17':['白' ,	'bái' ,	'white', 'blanco'],
-    '18':['红', 	'hóng', 	'red', 'rojo']
+    '18':['红', 	'hóng', 	'red', 'rojo'],
+    '19':['高',	'gāo',	'tall', 'alto'],
+    '20':['漂亮', 	'piàoliàng', 	'beautiful', 'hermoso'],
+    '21':['高兴',	'gāoxìng',	'happy', 'encantado'],
+    '22':['我', 'wǒ', 'I','yo'],
+    '23':['热',	'rè',	'hot', 'caliente'],
+    '24':['冷',	'lěng',	'cold', 'frio'],
+
 }
 
 
