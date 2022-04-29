@@ -19,29 +19,26 @@ outputSize = nFeatures
 
 model = nn.Linear(inputSize, outputSize)
 
-nIters = 30
 learningRate = 0.01
+nIters = 10000
 
 
 loss = nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=learningRate)
+optimizer = torch.optim.SGD(model.parameters(), lr = learningRate)
 
 
 
+#Training
 
-#Training 
+print(f'Prediction before the training = {model(xTest).item()}')
 
-print(f'prediction before the training = {model(xTest)}')
+for epoch in range(1,nIters+1):
 
-for epoch in range(1, nIters+1):
-
-    yPred = model(X)
-
-
-    l = loss(Y,yPred)
+    y_pred = model(X)
 
     l.backward()
-
+    
+    l = loss(Y, y_pred)
 
     optimizer.step()
 
@@ -49,12 +46,7 @@ for epoch in range(1, nIters+1):
 
 
 
-print(f'Prediction after the training = {model(xTest)}')
+print(f'Prediction after the training = {model(xTest).item()}')
 
-
-
-
-
-
-
+    
 
