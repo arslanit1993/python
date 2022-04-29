@@ -1,52 +1,54 @@
 import numpy as np 
 import torch
 from torch import no_grad 
+import torch.nn  as nn
 
 
+X = torch.tensor([[1],[2],[3],[4],[5]], dtype=torch.float32)
+Y = torch.tensor([[2],[4],[6],[8],[10]], dtype=torch.float32)
 
-X = torch.tensor([1,2,3,4,5,6], dtype=torch.float32)
-Y = torch.tensor([2,4,6,8,10,12], dtype=torch.float32)
 
-w = torch.tensor(0.0, dtype=torch.float32,requires_grad=True)
+w = torch.tensor(0.0, dtype = torch.float32, requires_grad=True)
 
 
 
 def forward(x):
-    return w*x
+    return w * x 
 
 
-def loss(y,y_predicted):
-    return ((y_predicted - y)**2).mean()
-
-
-
-print(f'Prediction before the training: forward(5) = {forward(5)} ')
-
-#Training 
 learningRate = 0.01
-nIters = 10000
+nIters = 1000
+
+
+loss =nn.MSELoss()
+optimizer = torch.optim.SGD([w], lr = learningRate)
 
 
 
-for epoch in range(1,nIters+1):
+#Training looop
+print(f'Prediciton before the training = {forward(10)}')
 
-    y_predicted = forward(X)
 
-    l = loss(Y, y_predicted)
+for epoch in range(nIters):
+
+
+    y_pred = forward(X)
+
+    l = loss(y_pred ,  Y)
 
     l.backward()
 
-
-    with torch.no_grad():
-        w -= w.grad*learningRate
+    optimizer.step()
 
 
-
-    w.grad.zero_()
-
-    if epoch%10 == 0:
-        print(f'The guess after the prediction {forward(5)}')
+    optimizer.zero_grad()
 
 
 
+print(f'Prediction after the training =  {forward(10)}')
+
+
+    
+    
+    
     
